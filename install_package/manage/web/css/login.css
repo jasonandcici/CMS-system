@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* header */
+body{
+  height: auto;
+  background-color: #318EC1;
+}
+
+.brand{
+  margin: 60px auto 20px auto;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.login-box{
+  width: 360px;
+  padding: 20px 30px 32px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  /*-webkit-box-shadow:  0 2px 10px rgba(0,0,0,.1);
+  -moz-box-shadow:  0 2px 10px rgba(0,0,0,.1);
+  box-shadow:  0 2px 10px rgba(0,0,0,.1);*/
+}
+.login-box h2{
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+
+.form-control{
+  height: 33px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.verificate-code .form-control{
+  width: 65%;
+  float: left;
+}
+.verificate-code a{
+  float: right;
+}
+.verificate-code img{
+  height: 34px;
+}
+
+form .btn[type="submit"]{
+  width: 100%;
+  font-weight: 700;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-family: "Helvetica Neue",Helvetica,Arial,"\5FAE\8F6F\96C5\9ED1",sans-serif;
+}
+
+.remember-me{
+  margin-bottom: 20px;
+}
+
+.find-password{
+  padding-top: 8px;
+  margin-top: 20px;
+  border-top: 1px solid #f1f1f1;
+}
+.find-password h4{
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 17px;
+}
+.find-password p{
+  color: #666;
+}
+
+.copyright{
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  color: #999;
+  font-size: 13px;
+}
+.copyright a{
+  color: #999;
+}
+.copyright a:hover{
+  text-decoration: underline;
+}
+
+.alert{
+  padding: 8px 10px;
+}
+.alert .iconfont{
+  font-size: 18px;
+  margin-right: 5px;
+  line-height: 20px;
+
+}
+
+form p.error{
+  clear: both;
+}
+
+.help-block{
+  margin-bottom: 0;
+}
+form .verificate-code .help-block{
+  float: left;
+}
+
+.login-box input[type=checkbox]{
+  margin-top: 3px;
+}
+
+@media (max-width: 767px) {
+  .brand {
+    margin: 0 auto;
+    padding: 15px;
+  }
+  .login-box{
+    padding: 10px 15px 25px;
+    width: 100%;
+  }
+  .verificate-code{
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .verificate-code .form-control{
+    float: none;
+    width: 100%;
+  }
+  .verificate-code a{
+    float: none;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  .remember-me{
+    margin-top: 0;
+  }
+}
+
+/* 黑黄搭配颜色 */
+body{
+  /*background-color: #111;*/
+  background-color: #318EC1;;
+}
+.btn-primary{
+  border-color: #000;
+  background-color: #000;
+  color: #ffef02;
+}
+.btn:focus,
+.btn-primary:active:focus{
+  outline: none;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:active:focus,
+.btn-primary:focus,
+.btn-primary{
+  border-color: #318EC1;
+  background-color: #318EC1;
+  color: #fff;
+}
+.btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary[disabled].active, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover{
+  background-color: #999;
+  border-color: #999;
+}
+
+.text-primary{
+  color: #000;
+}

@@ -1,0 +1,492 @@
+/* 本样式依赖bootstrap */
+.edui-default .edui-toolbar .edui-for-coralueditor,
+.edui-default .edui-toolbar .edui-for-coralueditoreditorarea{
+    float: right;
+}
+.coralueditor-body{
+    overflow: hidden;
+}
+.coralueditor-icon{
+    background: url("../images/icons.png") left top no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+}
+.coralueditor-icon-like{
+    background-position: -60px 0;
+}
+.coralueditor-wrapper{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom:0;
+    top:0;
+    z-index: 999;
+    background-color: #fff;
+    display: block;
+}
+.coralueditor-left{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    bottom: 15px;
+    width: 400px;
+}
+.coralueditor-left-nav{
+    position: relative;
+    z-index: 2;
+}
+.coralueditor-left-content{
+    position: absolute;
+    left: 0;
+    top:38px;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    border: 1px solid #ddd;
+}
+.coralueditor-left-content>.tab-pane{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+}
+
+.coralueditor-filter{
+    position: relative;
+}
+.coralueditor-filter-disabled:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+}
+.coralueditor-filter-search{
+    position: relative;
+    margin-bottom: 10px;
+}
+.coralueditor-filter-search .form-control{
+    width: 60%;
+    float: left;
+    border-right: none;
+}
+.coralueditor-filter-search .btn{
+    width: 20%;
+    border-radius: 0;
+    float: left;
+}
+.coralueditor-filter-color{
+    margin-bottom: 10px;
+}
+.coralueditor-filter-color>.btn{
+    display: block;
+    width: 10%;
+    height: 16px;
+    border-color: #fff;
+    margin: 0!important;
+    text-indent: -10000px;
+}
+.coralueditor-filter-color>.btn.active{
+    position: relative;
+    border-color: #000;
+}
+.coralueditor-filter-color>.btn.active:before,
+.coralueditor-color-fff:before,
+.coralueditor-filter-color>.btn.active:after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    content: '';
+    border:4px solid #000;
+}
+.coralueditor-filter-color>.btn.active:after{
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    top: 1px;
+    border: 1px solid #fff;
+}
+.coralueditor-filter-color>.btn:hover{
+    border-color: #000;
+}
+.coralueditor-color-fff:before{
+    border-width: 1px;
+}
+.coralueditor-filter-category-loading{
+    width: 100%!important;
+    height: 37px;
+    background: url("../images/loading.gif") center no-repeat;
+    background-size: 22px 22px;
+    display: block!important;
+}
+.coralueditor-color-multicolour{
+    background: -webkit-linear-gradient(0deg, rgba(193,61,9,1) 0, rgba(239,115,14,1) 10%, rgba(249,209,9,1) 24%, rgba(42,165,8,1) 35%, rgba(33,188,28,1) 44%, rgba(35,247,32,1) 56%, rgba(12,133,247,1) 71%, rgba(219,12,242,1) 85%, rgba(242,12,27,1) 100%);
+    background: -moz-linear-gradient(90deg, rgba(193,61,9,1) 0, rgba(239,115,14,1) 10%, rgba(249,209,9,1) 24%, rgba(42,165,8,1) 35%, rgba(33,188,28,1) 44%, rgba(35,247,32,1) 56%, rgba(12,133,247,1) 71%, rgba(219,12,242,1) 85%, rgba(242,12,27,1) 100%);
+    background: linear-gradient(90deg, rgba(193,61,9,1) 0, rgba(239,115,14,1) 10%, rgba(249,209,9,1) 24%, rgba(42,165,8,1) 35%, rgba(33,188,28,1) 44%, rgba(35,247,32,1) 56%, rgba(12,133,247,1) 71%, rgba(219,12,242,1) 85%, rgba(242,12,27,1) 100%);
+    background-position: 50% 50%;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+}
+
+.coralueditor-filter-category{
+    margin-bottom: 10px;
+    background-color: #fafafa;
+}
+.coralueditor-filter-category>li>a{
+    padding:10px 10px;
+    background-color: #fafafa;
+}
+
+.coralueditor-filter-category>li.active>a,
+.coralueditor-filter-category>li.active>a:hover,
+.coralueditor-filter-category>li.active>a:focus,
+.coralueditor-filter-category>li.active>a:active:focus,
+.coralueditor-filter-category .dropdown-menu>.active>a,
+.coralueditor-filter-category .dropdown-menu>.active>a:focus,
+.coralueditor-filter-category .dropdown-menu>.active>a:hover{
+    background-color: #000;
+}
+.coralueditor-filter-category .dropdown-menu{
+    min-width: 100px;
+}
+.coralueditor-filter-category>li:hover>a,
+.coralueditor-filter-category>li.current>a,
+.coralueditor-filter-category>li.current>a:hover,
+.coralueditor-filter-category>li.current>a:focus,
+.coralueditor-filter-category>li.current>a:active:focus{
+    background-color:#eee;
+}
+.coralueditor-filter-category>li:hover ul{
+    display: block;
+}
+.coralueditor-filter-category .dropdown-menu{
+    margin-top: 0;
+}
+.coralueditor-filter-content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 130px;
+    background-color: #fafafa;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.coralueditor-filter-content>ul{
+    padding: 10px;
+}
+.coralueditor-filter-content>ul>li:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.coralueditor-filter-content>ul>li{
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+    min-height: 100px;
+    line-height: 100px;
+    background-color: #eee;
+}
+.coralueditor-filter-content li.disabled{
+    cursor: text;
+    text-align: center;
+}
+.coralueditor-filter-content-hot{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,.15);
+    line-height: 23px;
+    opacity: 0;
+    -moz-transition: all 0.2s ease-out, color 0.1s ease-out;
+    -webkit-transition: all 0.2s ease-out, color 0.1s ease-out;
+    -ms-transition: all 0.2s ease-out, color 0.1s ease-out;
+    transition: all 0.2s ease-out, color 0.1s ease-out;
+}
+.coralueditor-filter-content-title{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    background-color: rgba(0,0,0,.15);
+    padding: 0 100px 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.coralueditor-filter-content-opt{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    display: none;
+}
+.coralueditor-filter-content-opt a{
+    display: inline-block;
+    padding: 0 5px;
+    margin-right: 5px;
+    color: #fff;
+}
+.coralueditor-filter-content-opt a:hover{
+    background-color: #000;
+}
+.coralueditor-filter-content>ul>li:hover .coralueditor-filter-content-opt{
+    display: block;
+}
+.coralueditor-filter-content>ul>li:first-child{
+    margin-top: 0;
+}
+.coralueditor-filter-content>ul>li .like{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 23px;
+    z-index: 3;
+    display: none;
+    background-color: #fafafa;
+    border-radius: 3px;
+}
+.coralueditor-filter-content>ul>li .like>a:hover,
+.coralueditor-filter-content>ul>li .like>a.active{
+    text-decoration: none;
+    background-position: -60px -30px;
+}
+.coralueditor-filter-content>ul>li:hover .coralueditor-filter-content-hot{
+    opacity: 1;
+}
+.coralueditor-filter-content>ul>li:hover .like{
+    display: block;
+}
+.coralueditor-filter-content>ul>li>img{
+    width: 100%;
+}
+.coralueditor-right{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    left: 440px;
+    bottom: 15px;
+    z-index: 1;
+}
+.coralueditor-header-title{
+    height: 39px;
+    line-height: 38px;
+    margin: 0;
+    cursor: default;
+}
+.coralueditor-header-title a{
+    display: inline-block;
+    padding: 0 6px;
+    height: 22px;
+    line-height: 22px;
+    margin-left: 3px;
+    background-color: #eee;
+}
+.coralueditor-header-title a.active,
+.coralueditor-header-title a:hover,
+.coralueditor-header-title a:focus,
+.coralueditor-header-title a:focus:active{
+    background-color: #000;
+    text-decoration: none;
+    color: #fff;
+}
+.coralueditor-header .btn{
+    margin: 4px 0 0 5px;
+}
+.coralueditor-main{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 38px;
+    z-index: 1;
+    background-color: #fafafa;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.coralueditor-main-inner{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+.coralueditor-main-content{
+    height: 100%;
+    overflow: hidden;
+}
+.coralueditor-loading,
+.coralueditor-loading-bg{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+}
+.coralueditor-loading-bg{
+    z-index: 1;
+    background-color: #fff;
+    opacity: .5;
+}
+.coralueditor-loading-content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 60px;
+    margin-left: -100px;
+    margin-top: -30px;
+    z-index: 2;
+    text-align: center;
+    font-size: 14px;
+}
+.coralueditor-loading-icon{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url("../images/loading.gif") center no-repeat;
+}
+.coralueditor-loading-text{
+    height: 24px;
+    line-height: 24px;
+}
+
+.coralueditor-filter-pager{
+    text-align: center;
+    height: 32px;
+    line-height: 22px;
+    padding-bottom: 10px;
+}
+.coralueditor-filter-pager a{
+    display: block;
+    vertical-align: top;
+    background-color: #ddd;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.coralueditor-filter-pager span{
+    display: none;
+    vertical-align: top;
+    background: url("../images/loading.gif") left center no-repeat;
+    background-size: contain;
+    padding-left: 30px;
+}
+.coralueditor-filter-pager.filter-loading-gif a{display: none}
+.coralueditor-filter-pager.filter-loading-gif span{
+    display: inline-block;
+}
+
+.coralueditor-dialog{
+    min-width: 500px;
+}
+.edui-default .coralueditor-dialog .edui-dialog-foot{
+    background-color: transparent;
+}
+
+.coralueditor-dialog .list-img ul{
+    float: left;
+    margin-top: -10px;
+}
+.coralueditor-dialog .list-img li{
+    float: left;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    background-color: #eee;
+    overflow: hidden;
+}
+.coralueditor-dialog .list-img .pic{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.coralueditor-dialog .list-img .pic .inner{
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+.coralueditor-dialog .list-img .pic img{
+    width: 100%;
+}
+.coralueditor-dialog .list-img .opt{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 1;
+    padding: 3px 20px 0;
+    color: #fff;
+    text-align: center;
+    height: 28px;
+    line-height: 20px;
+    background-color:rgba(0,0,0,.5);
+}
+.coralueditor-dialog .list-img .opt a{
+    display: block;
+    color: #fff;
+    margin-top: 0;
+}
+.coralueditor-dialog .list-img .upload{
+    float: left;
+    display: block;
+    border:1px solid #ccc;
+    border-radius: 3px;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+}
+.coralueditor-dialog .list-img .upload .iconfont{
+    font-size: 33px;
+    color: #ccc;
+}
+.coralueditor-dialog .list-img .upload:hover{
+    background-color: #fafafa;
+    text-decoration: none;
+}
+.edui-dialog .bootstrap-tagsinput{
+    width: 100%;
+}
+.edui-dialog .coralueditor-loading-content{
+    width: 200px;
+}
+.edui-dialog .coralueditor-loading-icon{
+    width: 32px;
+}
+.coralueditor-save-tpl-dialog .coralueditor-filter-color>.btn{
+    width: 20%;
+    height: 22px;
+}
+
+.coralueditor-show{display: block!important;}

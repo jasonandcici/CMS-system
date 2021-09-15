@@ -1,0 +1,62 @@
+<!-- 智能编辑器 -->
+<% var tabData = [{"title":"素材中心","type":"remote","categoryUrl":remoteCategoryUrl,"sourceUrl":remoteSourceUrl},{"title":"我的模板","type":"local","categoryUrl":localCategoryUrl,"sourceUrl":localSourceUrl}];%>
+<div class="<%=plugName%>-left">
+    <ul class="nav nav-tabs <%=plugName%>-left-nav" role="tablist">
+        <% for(var ti in tabData){ if(!tabData[ti].categoryUrl) continue;%>
+        <li role="presentation"<%=ti==0?' class="active"':''%>><a href="<%=tabData[ti].categoryUrl%>" data-target="#<%=plugName%>-tab-<%=tabData[ti].type%>" data-type="<%=tabData[ti].type%>"><%=tabData[ti].title%></a></li>
+        <% } %>
+    </ul>
+    <div class="tab-content <%=plugName%>-left-content">
+        <% for(var ti in tabData){ if(!tabData[ti].categoryUrl) continue;%>
+        <div class="tab-pane fade in<%=ti==0?' active':''%>" id="<%=plugName%>-tab-<%=tabData[ti].type%>" data-type="<%=tabData[ti].type%>">
+            <form class="<%=plugName%>-filter <%=plugName%>-filter-disabled" action="<%=tabData[ti].sourceUrl%>" method="get">
+                <div class="btn-group <%=plugName%>-filter-color clearfix" data-toggle="buttons">
+                    <% for(var i in colors){ %>
+                    <% if(colors[i] !== 'multicolour'){%>
+                    <label class="btn btn-primary<%=colors[i] == '#ffffff'?' '+plugName+'-color-fff':'' %>" style="background-color: <%=colors[i]%>;"><input type="radio" name="data[color]" autocomplete="off" value="<%=colors[i]%>"><%=colors[i]%></label>
+                    <% }else{ %>
+                    <label class="btn btn-primary <%=plugName%>-color-multicolour" title="其他"><input type="radio" name="data[color]" autocomplete="off" value="<%=colors[i]%>"><%=colors[i]%></label>
+                    <% }} %>
+                </div>
+                <input type="hidden" name="data[category_id]" class="<%=plugName%>-filter-category-input">
+                <ul class="nav nav-pills nav-justified <%=plugName%>-filter-category">
+                    <li class="<%=plugName%>-filter-category-loading"></li>
+                </ul>
+                <div class="<%=plugName%>-filter-search clearfix">
+                    <input type="text" class="form-control" name="data[title]" placeholder="请输入关键字">
+                    <button class="btn btn-default" type="submit">搜索</button>
+                    <button class="btn btn-link" type="reset">取消搜索</button>
+                </div>
+            </form>
+            <div class="<%=plugName%>-filter-content scroll-bar">
+                <ul class="<%=plugName%>-filter-content-main"></ul>
+                <div class="<%=plugName%>-filter-pager">
+                    <span>数据加载中...</span>
+                    <a href="javascript:;">点击加载更多</a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>
+<div class="<%=plugName%>-right">
+    <div class="<%=plugName%>-header">
+        <div class="pull-left <%=plugName%>-header-title" id="<%=plugName%>-content-width">
+            <span>正文宽度</span>
+            <% for(var i=0;i<contentWidth.length;i++){ %>
+            <a<%=i==0?' class=active':''%> href="javascript:;" data-width="<%=contentWidth[i]%>"><%=contentWidth[i]=='100%'?'自适应':contentWidth[i]%></a>
+            <% } %>
+        </div>
+        <div class="pull-right">
+            <span class="<%=plugName%>-header-line"></span>
+            <% if(localSourceBatch && localSourceBatch.url && localCategoryUrl) { %><button class="btn btn-default btn-sm" id="js-<%=plugName%>-save-tpl" type="button">存储为模板</button><% } %>
+            <button class="btn btn-default btn-sm" id="js-<%=plugName%>-close" type="button">关闭</button>
+            <button class="btn btn-primary btn-sm" id="js-<%=plugName%>-confirm" type="button">确定</button>
+        </div>
+    </div>
+    <div class="<%=plugName%>-main">
+        <div class="<%=plugName%>-main-inner" id="<%=plugName%>-main-inner">
+            <script id="<%=plugName%>-main-content" class="<%=plugName%>-main-content" name="<%=plugName%>-main-content" type="text/plain"></script>
+        </div>
+    </div>
+</div>
